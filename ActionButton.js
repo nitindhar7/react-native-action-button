@@ -107,7 +107,10 @@ export default class ActionButton extends Component {
     const Touchable = getTouchableComponent(this.props.useNativeFeedback);
 
     return (
-      <View style={{ paddingHorizontal: this.props.offsetX }}>
+      <View style={{
+          paddingHorizontal: this.props.offsetX,
+          zIndex: this.props.zIndez
+        }}>
         <Touchable
           background={touchableBackground}
           activeOpacity={this.props.activeOpacity}
@@ -250,6 +253,7 @@ ActionButton.propTypes = {
   backgroundTappable: PropTypes.bool,
   useNativeFeedback: PropTypes.bool,
   activeOpacity: PropTypes.number,
+  zIndex: PropTypes.number
 };
 
 ActionButton.defaultProps = {
